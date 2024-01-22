@@ -58,7 +58,7 @@ const CategoryMenus = () => {
     <NavigationMenu className="hidden md:block">
       <NavigationMenuList>
         <NavigationMenuItem className="">
-          <NavigationMenuTrigger className="text-lg">
+          <NavigationMenuTrigger className="text-lg focus:bg-green-100 hover:bg-green-100">
             Category
           </NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white p-5 lg:p-8 shadow-md ">
