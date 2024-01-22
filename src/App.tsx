@@ -1,6 +1,5 @@
-import Header from "./components/element/Header";
-import AppProviders from "./providers/app";
-import AppRoutes from "./routes";
+import AppProviders from "@/providers/app";
+import AppRoutes from "@/routes";
 
 const App = () => {
   return (

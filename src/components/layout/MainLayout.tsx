@@ -1,9 +1,9 @@
-import Header from "../element/Header";
+import Header from "@/components/element/Header";
 import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
   return (
-    <main className="">
+    <main className="font-poppins">
       <Header />
       <Outlet />
     </main>
