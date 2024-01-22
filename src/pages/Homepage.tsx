@@ -6,7 +6,9 @@ import sweaters from "assets/images/category/sweaters.png";
 import dress from "assets/images/category/dress.png";
 import CategoryCard from "@/components/elements/CategoryCard";
 
-const Banner = () => {
+import CustomLink from "@/components/ui/custom-link";
+
+const Hero = () => {
   return (
     <div
       className="flex md:mt-0 pb-10 lg:py-2 xl:py-8 flex-col-reverse gap-x-5  bg-green-100 items-center md:justify-around md:flex-row 
@@ -22,12 +24,7 @@ const Banner = () => {
         <span className="text-2xl lg:text-4xl xl:text-5xl font-bold">
           We don't do fashion. We are fashion.
         </span>
-        <button
-          type="button"
-          className="mt-4 bg-black text-white py-2 px-4 rounded-full w-fit"
-        >
-          Learn more
-        </button>
+        <CustomLink to="/">Learn more</CustomLink>
       </div>
       <img
         src={HeroImage}
@@ -59,7 +56,7 @@ const Categories = () => {
 const Homepage = () => {
   return (
     <section className="pb-5">
-      <Banner />
+      <Hero />
       <Categories />
     </section>
   );
