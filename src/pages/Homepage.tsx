@@ -4,7 +4,7 @@ import shirts from "assets/images/category/shirts.png";
 import jacket from "assets/images/category/jacket.png";
 import sweaters from "assets/images/category/sweaters.png";
 import dress from "assets/images/category/dress.png";
-import CategoryCard from "@/components/elements/CategoryCard";
+import CategoryCard from "@/components/category/CategoryCard";
 
 import CustomLink from "@/components/ui/custom-link";
 

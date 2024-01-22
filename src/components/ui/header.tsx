@@ -1,4 +1,4 @@
-import CategoryMenus from "./CategoryMenus";
+import CategoryMenus from "../category/CategoryMenus";
 import { Link } from "react-router-dom";
 
 const Header = () => {

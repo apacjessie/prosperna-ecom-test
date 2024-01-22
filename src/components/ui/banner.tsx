@@ -1,5 +1,5 @@
 import tshirts from "assets/images/category/tshirt.png";
-import CustomLink from "../ui/custom-link";
+import CustomLink from "./custom-link";
 
 const Banner = () => {
   return (

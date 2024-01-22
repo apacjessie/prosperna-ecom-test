@@ -1,5 +1,5 @@
-import Banner from "@/components/elements/Banner";
-import { useParams, Outlet } from "react-router-dom";
+import Banner from "@/components/ui/banner";
+import { Outlet } from "react-router-dom";
 
 const Shop = () => {
   return (
