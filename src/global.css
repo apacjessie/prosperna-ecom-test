@@ -16,3 +16,18 @@
     }
   }
 }
+
+@layer components {
+  .text-logo {
+    @apply text-lg md:text-2xl lg:text-3xl font-bold tracking-wide;
+  }
+  .hero-image {
+    @apply w-[80%] md:w-[18rem] lg:w-[25rem] xl:w-[50rem]  aspect-square lg:h-[30rem] object-contain;
+  }
+}
+
+@layer utilities {
+  .padding {
+    @apply px-5 md:px-10 lg:px-20 xl:px-36;
+  }
+}

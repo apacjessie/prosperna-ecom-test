@@ -5,7 +5,11 @@ export default {
     fontFamily: {
       poppins: ["Poppins", "sans-serif", "system-ui"],
     },
-    extend: {},
+    extend: {
+      colors: {
+        secondary: "#dcfce7",
+      },
+    },
   },
-  plugins: [],
+  plugins: [import("tailwindcss-animate")],
 };
