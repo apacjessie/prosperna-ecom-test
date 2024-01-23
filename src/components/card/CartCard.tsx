@@ -31,7 +31,7 @@ const CartCard = ({ product }: Props) => {
         h-fit md:items-start md:grid-flow-col gap-1"
     >
       <img
-        src={product.image}
+        src={product.image as string}
         className="aspect-square object-contain w-full bg-gray-100 p-2 pointer-events-none"
         alt={product.name}
       />

@@ -9,6 +9,7 @@ import {
 } from "../ui/select";
 import { FormEvent, useState } from "react";
 import { nanoid } from "nanoid";
+import { Dispatch, SetStateAction } from "react";
 
 interface Props {
   handleAddProduct: (product: FormData) => void;
@@ -37,7 +38,9 @@ const Add = ({ handleAddProduct, setAction }: Props) => {
     formData.append("price", product.price.toString());
     formData.append("rating", product.rating.toString());
 
-    setAction((prev) => !prev);
+    setAction((prev) => {
+      return { ...prev, add: false };
+    });
     handleAddProduct(formData);
   };
 
@@ -148,7 +151,11 @@ const Add = ({ handleAddProduct, setAction }: Props) => {
           <button
             type="button"
             className="py-1 font-semibold"
-            onClick={() => setAction((prev) => !prev)}
+            onClick={() =>
+              setAction((prev) => {
+                return { ...prev, add: false };
+              })
+            }
           >
             Cancel
           </button>
