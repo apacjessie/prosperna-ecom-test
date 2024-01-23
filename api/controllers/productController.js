@@ -68,7 +68,6 @@ const updateProduct = (req, res) => {
   readData((data) => {
     const { body } = req;
     const { image, ...prod } = body;
-
     const updated = data.map((product) =>
       product.id === body.id ? { ...prod, image: product.image } : product
     );
@@ -89,10 +88,15 @@ const deleteProduct = (req, res) => {
   }, false);
 };
 
+const addProduct = (req, res) => {
+  readData((data) => {}, false);
+};
+
 export {
   getAll,
   getProductById,
   getProductByCategory,
   updateProduct,
   deleteProduct,
+  addProduct,
 };
