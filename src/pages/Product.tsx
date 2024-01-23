@@ -15,6 +15,8 @@ const Product = () => {
   const [quantity, setQuantity] = useState<number>(1);
 
   const handleAddToCart = (product: IProduct) => {
+    const isExisted = cart.find((prod) => prod.id === id && prod.size === size);
+    if (isExisted) return;
     addToCart({ ...product, quantity, size });
   };
 
@@ -86,7 +88,7 @@ const Product = () => {
                 onClick={() => handleAddToCart(data)}
                 className="product-btn text-white bg-green-400 hover:bg-green-300"
               >
-                Checkout
+                Add to cart
               </button>
             </div>
           </div>

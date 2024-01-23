@@ -4,6 +4,7 @@ import Homepage from "../pages/Homepage";
 import { ShopPathChecker } from "@/features/path-checker";
 import Product from "@/pages/Product";
 import Cart from "@/pages/Cart";
+import AddModify from "@/pages/AddModify";
 
 const publicRoutes = [
   {
@@ -29,6 +30,7 @@ const publicRoutes = [
         path: "/cart",
         element: <Cart />,
       },
+      { path: "/products", element: <AddModify /> },
     ],
   },
 ];
