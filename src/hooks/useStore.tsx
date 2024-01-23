@@ -6,6 +6,7 @@ export interface StoreState {
   addToCart: (product: CartProduct) => void;
   removeToCart: (id: string) => void;
   changeProductQuantity: (id: string, quantity: number) => void;
+  clearCart: () => void;
 }
 
 const useStore = create<StoreState>((set) => ({
@@ -22,6 +23,7 @@ const useStore = create<StoreState>((set) => ({
         prod.id === id ? { ...prod, quantity: quantity } : prod
       ),
     })),
+  clearCart: () => set(() => ({ cart: [] })),
 }));
 
 export default useStore;

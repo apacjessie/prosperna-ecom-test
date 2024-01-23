@@ -1,17 +1,17 @@
 function getCategoryDescription(category: string | undefined): string {
   switch (category) {
     case undefined:
-      return "Browse Our Products";
+      return "Browse our products";
     case "tshirts":
-      return "T-shirts For you!";
+      return "T-shirts for you!";
     case "shirts":
-      return "Shirts For you!";
+      return "Shirts for you!";
     case "jackets":
-      return "Jackets For you!";
+      return "Jackets for you!";
     case "sweaters":
-      return "Sweaters For you!";
+      return "Sweaters for you!";
     case "dress":
-      return "Dress For you!";
+      return "Dress for you!";
     default:
       return "";
   }
