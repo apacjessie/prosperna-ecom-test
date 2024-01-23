@@ -31,5 +31,9 @@ node version used: v20.9.0
 ![Modal](screenshot/addproduct.png)
 ![404](screenshot/404.png)
 
+# To do
+- Test the application
+- Containerize the application using Docker
+
 # Conclusion
 A fully functional fullstack web application that used modern technologies for faster development and user-friendly ui design. As of now i did not tested the application yet. but will still update this repo.
