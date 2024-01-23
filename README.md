@@ -23,7 +23,7 @@ node version used: v20.9.0
 3. npm run dev or pnpm run dev. depending on your package manager use.
 
 # Screenshot
-!Home [screenshot/home.png]
+!Home (screenshot/home.png)
 
 # Conclusion
 A fully functional fullstack web application that used modern technologies for faster development and user-friendly ui design. As of now i did not tested the application yet. but will still update this repo.
