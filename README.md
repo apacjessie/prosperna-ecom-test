@@ -24,6 +24,12 @@ node version used: v20.9.0
 
 # Screenshot
 ![Home](screenshot/home.png)
+![Shop](screenshot/shop.png)
+![Cart](screenshot/cart.png)
+![Product](screenshot/product.png)
+![AddModify](screenshot/addmodify.png)
+![Modal](screenshot/addproduct.png)
+![404](screenshot/404.png)
 
 # Conclusion
 A fully functional fullstack web application that used modern technologies for faster development and user-friendly ui design. As of now i did not tested the application yet. but will still update this repo.
