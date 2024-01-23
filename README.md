@@ -33,12 +33,13 @@ In this project, I've opted for a straightforward project structure by placing b
 ## Docker
 #### WSL/Libux
 Step 1: Build the Docker image
-
-``sudo docker build -t <preferred_image_name> .``
-
+```
+sudo docker build -t <preferred_image_name> .
+```
 Step 2: Create a container from the image
-
-``sudo docker run -p 5173:5173 -p 3000:3000 --name <preferred_container_name>  <name_of_image_in_step_1>``
+```
+sudo docker run -p 5173:5173 -p 3000:3000 --name <preferred_container_name>  <name_of_image_in_step_1>
+```
 
 
 
