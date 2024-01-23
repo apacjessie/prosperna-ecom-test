@@ -12,4 +12,8 @@ export default defineConfig({
       api: path.resolve(__dirname, "./api"),
     },
   },
+  server: {
+    host: true,
+    port: 5173,
+  },
 });
