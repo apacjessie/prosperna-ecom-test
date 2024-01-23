@@ -21,6 +21,8 @@ Development Accelerators:
 
 To enhance the development experience, nodemon and concurrently are employed to facilitate rapid reloads of the API during code changes, enabling seamless development for both the backend and frontend
 
+In this project, I've opted for a straightforward project structure by placing both the Express backend and the Vite + React frontend in the same directory. This decision promotes a unified and easy-to-follow project organization, making it convenient to navigate and manage both the server-side and client-side code within a single workspace.
+
 # Usage Instructions:
 1. Clone the repository.
 2. Install dependencies.
