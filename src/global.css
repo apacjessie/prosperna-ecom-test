@@ -69,6 +69,9 @@
   .hero-image {
     @apply w-[80%] md:w-[18rem] lg:w-[25rem] xl:w-[50rem]  aspect-square lg:h-[30rem] object-contain;
   }
+  .product-btn {
+    @apply px-4 py-3 lg:px-12 lg:py-4 font-[500] lg:text-base md:text-lg xl:text-xl rounded-full;
+  }
 }
 
 @layer utilities {
