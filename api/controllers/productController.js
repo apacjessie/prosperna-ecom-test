@@ -21,7 +21,6 @@ const rewriteData = async (data) => {
 const getAll = (req, res) => {
   readData((data) => {
     const { query } = req;
-    console.log(data);
     if (!query.category) return res.status(200).json(data);
 
     const validCategory = ["tshirts", "shirts", "jackets", "dress", "sweaters"];

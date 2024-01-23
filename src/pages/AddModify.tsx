@@ -20,7 +20,7 @@ const AddModify = () => {
   const { isPending, data, refetch, isFetching } = useQuery({
     queryKey: ["products"],
     queryFn: async () => {
-      return await callApi("http://localhost:3000/product", Method.GET, null);
+      return await callApi("http://localhost:3000/product", Method.GET);
     },
   });
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
