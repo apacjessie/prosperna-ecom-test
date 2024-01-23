@@ -31,7 +31,7 @@ In this project, I've opted for a straightforward project structure by placing b
 3. Run npm run dev or pnpm run dev
 
 ## Docker
-#### WSL/Libux
+#### WSL/Linux
 Step 1: Build the Docker image
 ```
 sudo docker build -t <preferred_image_name> .
