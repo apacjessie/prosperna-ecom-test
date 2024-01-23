@@ -28,7 +28,7 @@ In this project, I've opted for a straightforward project structure by placing b
 2. Install dependencies.
 3. Run npm run dev or pnpm run dev, depending on your preferred package manager.
 
-Prerequisites:
+## Prerequisites:
 Ensure that PORT 3000 is available, and use Node version v20.9.0.
 
 # To do
