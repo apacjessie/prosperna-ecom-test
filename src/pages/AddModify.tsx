@@ -39,6 +39,11 @@ const AddModify = () => {
     refetch();
   };
 
+  const addProduct = async (product: FormData) => {
+    await callApi("http://localhost:3000/product/add", Method.POST, product);
+    refetch();
+  };
+
   const columns: ColumnDef<Product>[] = [
     {
       accessorKey: "name",
@@ -96,7 +101,7 @@ const AddModify = () => {
           Add Product
         </button>
       </div>
-      {action.add && <Add handleAddProduct={() => {}} />}
+      {action.add && <Add handleAddProduct={addProduct} />}
       {action.modify && (
         <Modify
           product={selectedProduct}

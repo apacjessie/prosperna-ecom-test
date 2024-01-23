@@ -35,7 +35,7 @@ export interface Product {
   id: string | "";
   name: string | "";
   rating: number | 0;
-  image: string | "";
+  image: string | File;
   price: number | 0;
   category: Category | "";
   gender: Gender.MEN | Gender.WOMEN | "";

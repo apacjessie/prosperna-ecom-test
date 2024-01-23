@@ -5,7 +5,20 @@ import {
   getProductByCategory,
   updateProduct,
   deleteProduct,
+  addProduct,
 } from "../controllers/productController.js";
+import multer from "multer";
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "api/uploads/");
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
+
+const upload = multer({ storage: storage });
 
 const router = express.Router();
 
@@ -18,5 +31,7 @@ router.get("/:category", getProductByCategory);
 router.put("/update", updateProduct);
 
 router.delete("/delete/:id", deleteProduct);
+
+router.post("/add", upload.single("image"), addProduct);
 
 export default router;

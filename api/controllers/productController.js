@@ -21,7 +21,7 @@ const rewriteData = async (data) => {
 const getAll = (req, res) => {
   readData((data) => {
     const { query } = req;
-
+    console.log(data);
     if (!query.category) return res.status(200).json(data);
 
     const validCategory = ["tshirts", "shirts", "jackets", "dress", "sweaters"];
@@ -83,13 +83,28 @@ const deleteProduct = (req, res) => {
     const updated = data.filter((product) => product.id !== id);
 
     rewriteData(updated);
-    console.log(updateProduct);
     return res.status(200).json({ message: "success" });
   }, false);
 };
 
 const addProduct = (req, res) => {
-  readData((data) => {}, false);
+  readData((data) => {
+    const { body, file } = req;
+
+    const product = {
+      name: body.name,
+      gender: body.gender,
+      category: body.category,
+      price: parseInt(body.price),
+      rating: parseInt(body.rating),
+      image: `/uploads/${file.filename}`,
+    };
+
+    const updated = [...data, product];
+
+    rewriteData(updated);
+    return res.status(200).json({ message: "success" });
+  }, false);
 };
 
 export {
