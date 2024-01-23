@@ -1,28 +1,33 @@
 # React + TypeScript + Vite
+Introducing a full-stack web application developed with cutting-edge technologies, this project leverages Vite, React, Tailwind CSS, and TypeScript for the frontend, while the backend is powered by Express using a simple file-based approach for data storage.
 
-Created an ecommerce web application using the following technologies:
-- Vite
-- React
-- Tailwindcss
-- TypeScript
-- Express
+Key Technologies Used:
 
-Libraries that used to ensure fast development of the application:
-- Shadcn-ui
-- multer
-- zustand
-- lucide-react
+    Frontend:
+        Vite
+        React
+        Tailwind CSS
+        TypeScript
 
-Also using nodemon and concurrently to ensure fast reload of api when there's changes and concurrently run both backend and frontend
+    Backend:
+        Express with a file-based storage approach
 
-# Usage
-Tips: Ensure that PORT 3000 is available
+Development Accelerators:
 
-node version used: **v20.9.0**
+    Shadcn-ui
+    multer
+    zustand
+    lucide-react
 
-1. clone the repo
-2. install dependency.
-3. npm run dev or pnpm run dev. depending on your package manager use.
+To enhance the development experience, nodemon and concurrently are employed to facilitate rapid reloads of the API during code changes, enabling seamless development for both the backend and frontend
+
+# Usage Instructions:
+1. Clone the repository.
+2. Install dependencies.
+3. Run npm run dev or pnpm run dev, depending on your preferred package manager.
+
+Prerequisites:
+Ensure that PORT 3000 is available, and use Node version v20.9.0.
 
 # To do
 - Test the application
@@ -37,5 +42,5 @@ node version used: **v20.9.0**
 ![Modal](screenshot/addproduct.png)
 ![404](screenshot/404.png)
 
-# Conclusion
-A fully functional fullstack web application that used modern technologies for faster development and user-friendly ui design. As of now i did not tested the application yet. but will still update this repo.
+# Conclusion:
+This fully functional full-stack web application embraces modern technologies, fostering efficient development and a user-friendly UI design. While testing is pending, updates to the repository are anticipated.
