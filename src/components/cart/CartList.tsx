@@ -15,7 +15,7 @@ const CartList = () => {
         <div>
           <div className="grid grid-rows-[repeat(5,_min-content)]  gap-y-8 h-[calc(100vh_-_18rem)] lg:h-[calc(100vh_-_20.5rem)] overflow-y-scroll">
             {cart?.map((prod: Product) => (
-              <CartCard key={prod.id} product={prod} />
+              <CartCard key={prod.id} product={prod as CartProduct} />
             ))}
           </div>
         </div>

@@ -13,7 +13,7 @@ const Cart = () => {
       >
         <CartList />
         <div>
-          <OrderSummary cart={[]} />
+          <OrderSummary />
           <button
             className="bg-black text-white font-bold tracking-wide
            w-full py-3 rounded-full mt-4 hover:bg-black/75"

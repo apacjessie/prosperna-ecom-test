@@ -38,12 +38,14 @@ const Header = () => {
         >
           <ShoppingCart />
           Cart
-          <div
-            className="absolute bg-green-200 px-2.5 py-0.5 
-          flex items-center rounded-full text-xs -top-1 left-20"
-          >
-            {cart.length}
-          </div>
+          {cart.length > 0 && (
+            <div
+              className="absolute bg-green-200 px-2.5 py-0.5 
+         items-center rounded-full text-xs -top-1 left-20 hidden md:flex"
+            >
+              {cart.length}
+            </div>
+          )}
         </NavLink>
       </nav>
     </header>

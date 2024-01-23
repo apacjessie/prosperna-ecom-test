@@ -1,17 +1,26 @@
 import fs from "fs/promises";
 
-const readData = async (callback) => {
+const readData = async (callback, useImage = true) => {
   const data = JSON.parse(await fs.readFile("api/data.json", "utf-8"));
   const updateImagePath = data.map((product) => {
-    return { ...product, image: `http://localhost:3000${product.image}` };
+    return useImage
+      ? { ...product, image: `http://localhost:3000${product.image}` }
+      : product;
   });
   callback(updateImagePath);
+};
+
+const rewriteData = async (data) => {
+  try {
+    await fs.writeFile("api/data.json", JSON.stringify(data));
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 const getAll = (req, res) => {
   readData((data) => {
     const { query } = req;
-    console.log(query);
 
     if (!query.category) return res.status(200).json(data);
 
@@ -55,4 +64,35 @@ const getProductByCategory = (req, res) => {
   });
 };
 
-export { getAll, getProductById, getProductByCategory };
+const updateProduct = (req, res) => {
+  readData((data) => {
+    const { body } = req;
+    const { image, ...prod } = body;
+
+    const updated = data.map((product) =>
+      product.id === body.id ? { ...prod, image: product.image } : product
+    );
+
+    rewriteData(updated);
+    return res.status(200).json({ message: "success" });
+  }, false);
+};
+
+const deleteProduct = (req, res) => {
+  readData((data) => {
+    const { id } = req.params;
+    const updated = data.filter((product) => product.id !== id);
+
+    rewriteData(updated);
+    console.log(updateProduct);
+    return res.status(200).json({ message: "success" });
+  }, false);
+};
+
+export {
+  getAll,
+  getProductById,
+  getProductByCategory,
+  updateProduct,
+  deleteProduct,
+};

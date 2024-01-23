@@ -38,7 +38,7 @@ export interface Product {
   image: string;
   price: number;
   category: Category;
-  gender: "men" | "women";
+  gender: Gender.MEN | Gender.WOMEN;
 }
 
 export interface CartProduct extends Product {

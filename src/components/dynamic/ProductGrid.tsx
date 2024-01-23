@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
-import fetchJson from "@/utils/fetchJson";
+import callApi from "@/utils/callApi";
 import { Gender, Method, PriceSort, Product } from "@/lib/types";
 import getCategoryDescription from "@/utils/getCategoryDescription";
 import ProductCard from "../card/ProductCard";
@@ -21,8 +21,8 @@ const ProductGrid = () => {
     queryFn: async () => {
       const data =
         category === undefined
-          ? await fetchJson("http://localhost:3000/product", Method.GET)
-          : await fetchJson(
+          ? await callApi("http://localhost:3000/product", Method.GET)
+          : await callApi(
               `http://localhost:3000/product?category=${category}`,
               Method.GET
             );

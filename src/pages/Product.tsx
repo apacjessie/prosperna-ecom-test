@@ -2,7 +2,7 @@ import Loader from "@/components/ui/loader";
 import Quantity from "@/features/quantity";
 import useStore, { StoreState } from "@/hooks/useStore";
 import { Method, Product as IProduct, Size } from "@/lib/types";
-import fetchJson from "@/utils/fetchJson";
+import callApi from "@/utils/callApi";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
@@ -23,7 +23,7 @@ const Product = () => {
   const { isPending, data } = useQuery({
     queryKey: ["product"],
     queryFn: async () =>
-      await fetchJson(`http://localhost:3000/product/${id}`, Method.GET),
+      await callApi(`http://localhost:3000/product/${id}`, Method.GET),
   });
 
   if (isPending) return <Loader />;
