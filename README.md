@@ -16,7 +16,9 @@ Libraries that used to ensure fast development of the application:
 Also using nodemon and concurrently to ensure fast reload of api when there's changes and concurrently run both backend and frontend
 
 # Usage
-node version used: v20.9.0
+Tips: Ensure that PORT 3000 is available
+
+node version used: **v20.9.0**
 
 1. clone the repo
 2. install dependency.
