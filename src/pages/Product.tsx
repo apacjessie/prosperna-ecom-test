@@ -7,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import SelectSize from "@/features/select-size";
+import { NotValid } from "./NotFound";
 
 const Product = () => {
   const { id } = useParams();
@@ -30,7 +31,7 @@ const Product = () => {
 
   return (
     <section className="padding pb-4">
-      {data ? (
+      {data && id !== "undefined" ? (
         <div className="grid  grid-cols-1 lg:grid-cols-2 lg:gap-y-0 xl:gap-x-5 gap-x-10">
           <img
             src={data.image}
@@ -94,7 +95,7 @@ const Product = () => {
           </div>
         </div>
       ) : (
-        <span>No product with that id</span>
+        <NotValid message="No product with that id" />
       )}
     </section>
   );

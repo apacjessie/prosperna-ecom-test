@@ -101,7 +101,9 @@ const AddModify = () => {
           Add Product
         </button>
       </div>
-      {action.add && <Add handleAddProduct={addProduct} />}
+      {action.add && (
+        <Add handleAddProduct={addProduct} setAction={setAction} />
+      )}
       {action.modify && (
         <Modify
           product={selectedProduct}

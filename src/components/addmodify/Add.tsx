@@ -12,9 +12,10 @@ import { nanoid } from "nanoid";
 
 interface Props {
   handleAddProduct: (product: FormData) => void;
+  setAction: Dispatch<SetStateAction<{ modify: boolean; add: boolean }>>;
 }
 
-const Add = ({ handleAddProduct }: Props) => {
+const Add = ({ handleAddProduct, setAction }: Props) => {
   const [product, setProduct] = useState<Product>({
     id: nanoid(),
     category: "",
@@ -28,6 +29,7 @@ const Add = ({ handleAddProduct }: Props) => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const formData = new FormData();
+    formData.append("id", product.id);
     formData.append("image", product.image);
     formData.append("name", product.name);
     formData.append("gender", product.gender);
@@ -35,6 +37,7 @@ const Add = ({ handleAddProduct }: Props) => {
     formData.append("price", product.price.toString());
     formData.append("rating", product.rating.toString());
 
+    setAction((prev) => !prev);
     handleAddProduct(formData);
   };
 
@@ -142,7 +145,11 @@ const Add = ({ handleAddProduct }: Props) => {
           </span>
         </div>
         <div className="mt-5 w-full grid grid-cols-2 items-center justify-around">
-          <button type="button" className="py-1 font-semibold">
+          <button
+            type="button"
+            className="py-1 font-semibold"
+            onClick={() => setAction((prev) => !prev)}
+          >
             Cancel
           </button>
 

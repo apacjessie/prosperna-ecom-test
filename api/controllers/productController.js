@@ -92,6 +92,7 @@ const addProduct = (req, res) => {
     const { body, file } = req;
 
     const product = {
+      id: body.id,
       name: body.name,
       gender: body.gender,
       category: body.category,

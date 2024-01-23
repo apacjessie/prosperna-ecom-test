@@ -5,7 +5,7 @@ import { ShopPathChecker } from "@/features/path-checker";
 import Product from "@/pages/Product";
 import Cart from "@/pages/Cart";
 import AddModify from "@/pages/AddModify";
-
+import Error from "@/pages/404";
 const publicRoutes = [
   {
     path: "/",
@@ -33,6 +33,7 @@ const publicRoutes = [
       { path: "/products", element: <AddModify /> },
     ],
   },
+  { path: "*", element: <Error /> },
 ];
 
 export default publicRoutes;
