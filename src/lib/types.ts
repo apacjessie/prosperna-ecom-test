@@ -32,13 +32,13 @@ export enum Category {
 }
 
 export interface Product {
-  id: string;
-  name: string;
-  rating: number;
-  image: string;
-  price: number;
-  category: Category;
-  gender: Gender.MEN | Gender.WOMEN;
+  id: string | "";
+  name: string | "";
+  rating: number | 0;
+  image: string | "";
+  price: number | 0;
+  category: Category | "";
+  gender: Gender.MEN | Gender.WOMEN | "";
 }
 
 export interface CartProduct extends Product {

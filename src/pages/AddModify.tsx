@@ -14,6 +14,7 @@ import {
 import { useState } from "react";
 
 import Modify from "@/components/addmodify/Modify";
+import Add from "@/components/addmodify/Add";
 
 const AddModify = () => {
   const { isPending, data, refetch, isFetching } = useQuery({
@@ -23,9 +24,9 @@ const AddModify = () => {
     },
   });
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [action, setAction] = useState<{ modify: boolean; delete: boolean }>({
+  const [action, setAction] = useState<{ modify: boolean; add: boolean }>({
     modify: false,
-    delete: false,
+    add: false,
   });
 
   const saveEdit = async (data: Product) => {
@@ -88,10 +89,14 @@ const AddModify = () => {
   return (
     <section className="padding">
       <div className="w-full justify-end flex">
-        <button className="bg-green-400 text-white font-medium px-3 py-1 mb-2 ">
+        <button
+          className="bg-green-400 text-white font-medium px-3 py-1 mb-2"
+          onClick={() => setAction({ ...action, add: !action.add })}
+        >
           Add Product
         </button>
       </div>
+      {action.add && <Add handleAddProduct={() => {}} />}
       {action.modify && (
         <Modify
           product={selectedProduct}

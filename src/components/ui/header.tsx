@@ -21,7 +21,11 @@ const Header = () => {
       <nav className="flex items-center gap-5">
         <NavLink
           to="/products"
-          className="flex gap-2 text-base md:text-lg font-medium"
+          style={({ isActive }) => ({
+            color: isActive ? "green" : "black",
+          })}
+          className="flex gap-2 text-base md:text-lg font-medium
+          "
         >
           <FileCog />
           Add/Modify Product
@@ -31,10 +35,9 @@ const Header = () => {
           style={({ isActive }) => ({
             color: isActive ? "green" : "black",
           })}
-          className={`${({ isActive }: { isActive: boolean }) =>
-            isActive ? "text-green-100" : "text-black"}
+          className="
             flex gap-2 text-base md:text-lg font-medium relative
-          `}
+          "
         >
           <ShoppingCart />
           Cart

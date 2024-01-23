@@ -12,8 +12,8 @@ import { Dispatch, SetStateAction, useState } from "react";
 interface Props {
   product: Product | null;
   actionController: {
-    action: { modify: boolean; delete: boolean };
-    setAction: Dispatch<SetStateAction<{ modify: boolean; delete: boolean }>>;
+    action: { modify: boolean; add: boolean };
+    setAction: Dispatch<SetStateAction<{ modify: boolean; add: boolean }>>;
   };
   handleEditSave: (data: Product) => void;
 }
