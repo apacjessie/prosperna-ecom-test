@@ -5,6 +5,13 @@ export enum Method {
   PUT = "put",
 }
 
+export enum Size {
+  SMALL = "small",
+  MEDIUM = "medium",
+  LARGE = "large",
+  XL = "xl",
+}
+
 export enum PriceSort {
   ASCENDING = "ascending",
   DESCENDING = "descending",
@@ -32,4 +39,9 @@ export interface Product {
   price: number;
   category: Category;
   gender: "men" | "women";
+}
+
+export interface CartProduct extends Product {
+  quantity: number;
+  size: Size;
 }

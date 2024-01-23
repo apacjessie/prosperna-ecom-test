@@ -1,11 +1,22 @@
 import Loader from "@/components/ui/loader";
-import { Method } from "@/lib/types";
+import Quantity from "@/features/quantity";
+import useStore, { StoreState } from "@/hooks/useStore";
+import { Method, Product as IProduct, Size } from "@/lib/types";
 import fetchJson from "@/utils/fetchJson";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
+import { useState } from "react";
+import SelectSize from "@/features/select-size";
 
 const Product = () => {
   const { id } = useParams();
+  const { cart, addToCart }: StoreState = useStore();
+  const [size, setSize] = useState<Size>(Size.SMALL);
+  const [quantity, setQuantity] = useState<number>(1);
+
+  const handleAddToCart = (product: IProduct) => {
+    addToCart({ ...product, quantity, size });
+  };
 
   const { isPending, data } = useQuery({
     queryKey: ["product"],
@@ -16,7 +27,7 @@ const Product = () => {
   if (isPending) return <Loader />;
 
   return (
-    <section className="padding">
+    <section className="padding pb-4">
       {data ? (
         <div className="grid  grid-cols-1 lg:grid-cols-2 lg:gap-y-0 xl:gap-x-5 gap-x-10">
           <img
@@ -35,6 +46,7 @@ const Product = () => {
               exercitationem sunt sed vero iusto vel facere voluptas aspernatur
               fugiat adipisci, libero aperiam magnam!
             </p>
+
             <div className="my-5 flex items-center gap-2">
               <span className=" bg-green-200 text-gray-600 w-fit px-3 py-1 rounded-full">
                 {data.category}
@@ -47,6 +59,21 @@ const Product = () => {
             <span className="text-2xl xl:text-2xl 2xl:text-3xl font-bold mt-4">
               &#8369; {data.price}
             </span>
+
+            <SelectSize sizeController={{ size: size, setSize: setSize }} />
+
+            <div className="flex items-center gap-x-4 mt-5">
+              <Quantity
+                quantityController={{ quantity, setQuantity }}
+                className="flex items-center p-4 py-3 xl:py-3.5 lg:py-2
+               rounded-full  justify-around w-[10rem]"
+              />
+              <p className="text-xs md:text-sm lg:text-base">
+                Only <span className="text-green-300">12 Item</span> Left!{" "}
+                {<br></br>} Don't miss it
+              </p>
+            </div>
+
             <div className="mt-10 w-full flex items-center gap-10">
               <button
                 type="button"
@@ -56,6 +83,7 @@ const Product = () => {
               </button>
               <button
                 type="button"
+                onClick={() => handleAddToCart(data)}
                 className="product-btn text-white bg-green-400 hover:bg-green-300"
               >
                 Checkout

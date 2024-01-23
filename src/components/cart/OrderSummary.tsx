@@ -1,11 +1,13 @@
+import useStore from "@/hooks/useStore";
 import { useState, useEffect } from "react";
 
 interface Props {
   cart: CartProduct[] | null;
 }
 
-const OrderSummary = ({ cart }: Props) => {
+const OrderSummary = () => {
   const [total, setTotal] = useState<number>(0);
+  const { cart } = useStore();
 
   useEffect(() => {
     if (cart && cart.length <= 0) setTotal(0);
