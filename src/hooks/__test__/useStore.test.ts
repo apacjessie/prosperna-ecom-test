@@ -1,7 +1,6 @@
 import useStore from "../useStore";
 import { Category, Gender, Size } from "@/lib/types";
 import { renderHook, act } from "@testing-library/react";
-import { useEffect } from "react";
 
 const products = [
   {

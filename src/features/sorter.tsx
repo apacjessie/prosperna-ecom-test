@@ -23,15 +23,24 @@ const Sorter = ({ value, setValue }: Props) => {
           defaultValue={value}
           onValueChange={(value) => setValue(value as PriceSort)}
         >
-          <SelectTrigger className="border border-gray-400 rounded-lg">
+          <SelectTrigger
+            className="border border-gray-400 rounded-lg"
+            data-testid="select-trigger"
+          >
             <SelectValue placeholder="Price: "></SelectValue>
           </SelectTrigger>
 
-          <SelectContent className="bg-white">
-            <SelectItem value={PriceSort.ASCENDING}>
+          <SelectContent className="bg-white" data-testid="select-dropdown">
+            <SelectItem
+              value={PriceSort.ASCENDING}
+              data-testid="select-option-ascending"
+            >
               Price: Ascending
             </SelectItem>
-            <SelectItem value={PriceSort.DESCENDING}>
+            <SelectItem
+              value={PriceSort.DESCENDING}
+              data-testid="select-option-descending"
+            >
               Price: Descending
             </SelectItem>
           </SelectContent>
