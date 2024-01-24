@@ -20,7 +20,7 @@ const SelectSize = ({ sizeController }: Props) => {
   return (
     <Select
       defaultValue={size}
-      onValueChange={(value) => setSize((prev) => (prev = value as Size))}
+      onValueChange={(value) => setSize(value as Size)}
     >
       <SelectTrigger className="my-4 py-6 xl:w-4/6">
         <SelectValue placeholder="Select size..."></SelectValue>

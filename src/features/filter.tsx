@@ -16,25 +16,31 @@ const Filter = ({ value, setValue }: Props) => {
   return (
     <div>
       <DropdownMenu>
-        <DropdownMenuTrigger className="border border-gray-400 py-1 md:py-2 px-4 hover:bg-green-100">
-          Filter ({value.charAt(0)})
+        <DropdownMenuTrigger
+          className="border border-gray-400 py-1 md:py-2 px-4 hover:bg-green-100"
+          data-testid="dropdown-trigger"
+        >
+          Filter: ({value.charAt(0).toUpperCase()})
         </DropdownMenuTrigger>
-        <DropdownMenuContent>
+        <DropdownMenuContent data-testid="dropdown-content">
           <DropdownMenuCheckboxItem
             checked={value === Gender.ALL}
             onCheckedChange={() => setValue(Gender.ALL)}
+            data-testid="filter-all"
           >
             {Gender.ALL}
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={value === Gender.MEN}
             onCheckedChange={() => setValue(Gender.MEN)}
+            data-testid="filter-men"
           >
             {Gender.MEN}
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={value === Gender.WOMEN}
             onCheckedChange={() => setValue(Gender.WOMEN)}
+            data-testid="filter-women"
           >
             {Gender.WOMEN}
           </DropdownMenuCheckboxItem>

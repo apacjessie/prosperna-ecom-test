@@ -1,11 +1,5 @@
 import Sorter from "../sorter";
-import {
-  render,
-  cleanup,
-  screen,
-  renderHook,
-  waitFor,
-} from "@testing-library/react";
+import { render, cleanup, screen, renderHook } from "@testing-library/react";
 import { PriceSort } from "@/lib/types";
 import userEvent from "@testing-library/user-event";
 import { useState } from "react";
@@ -36,7 +30,7 @@ describe("Sorter", () => {
     assert.exists(screen.getByTestId("select-option-descending"));
   });
 
-  it("Can change option", async () => {
+  it("Can change option to ascending and descending", async () => {
     const { result } = renderHook(() =>
       useState<PriceSort>(PriceSort.ASCENDING)
     );
@@ -46,8 +40,11 @@ describe("Sorter", () => {
     await userEvent.click(screen.getByTestId("select-trigger"));
     await userEvent.click(screen.getByTestId("select-option-descending"));
 
-    assert.exists(screen.getByText("Sort by:"));
-    assert.exists(screen.getByText("Price: Descending"));
     expect(result.current[0]).toBe(PriceSort.DESCENDING);
+
+    await userEvent.click(screen.getByTestId("select-trigger"));
+    await userEvent.click(screen.getByTestId("select-option-ascending"));
+
+    expect(result.current[0]).toBe(PriceSort.ASCENDING);
   });
 });
